@@ -55,16 +55,6 @@
     <Compile Include="ProdutoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\R2L2.Domain\R2L2.Domain.csproj">
-      <Project>{47826b91-351c-4ced-927f-3cab4e2a4f4a}</Project>
-      <Name>R2L2.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\R2L2.Infra\R2L2.Infra.csproj">
-      <Project>{f012c1b0-27cf-4368-8651-9758bb4026ed}</Project>
-      <Name>R2L2.Infra</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
