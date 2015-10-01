@@ -12,9 +12,10 @@ namespace R2L2.Presentation
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/R2L2.Presentation")
+            bundles.Add(new ScriptBundle("~/bundles/R2L2Presentation")
                 .IncludeDirectory("~/Scripts/Controllers","*.js")
-                .Include("~/Scripts/R2L2.Presentation.js"));
+                .IncludeDirectory("~/Scripts/Factories","*.js")
+                .Include("~/Scripts/R2L2Presentation.js"));
 
             BundleTable.EnableOptimizations = true;
         }
