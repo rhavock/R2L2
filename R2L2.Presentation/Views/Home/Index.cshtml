@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title ng-bind="DashBoard"></title>
+        @Scripts.Render("~/Scripts/angular")      
+    </head>
+    <body>
+        
+        <input type="text" ng-model="homeController" />
+        <h1>{{homeController}}</h1>
+         
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>       
+        @Scripts.Render("~/bundles/R2L2.Presentation")
+    </body>
+</html>
