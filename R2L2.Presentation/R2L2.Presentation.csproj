@@ -49,6 +49,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=2.0.1.27, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -168,6 +169,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Models\ProdutoModel.cs" />
     <Compile Include="Controllers\RoutesDemoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,12 +178,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\dataTables.colVis.css" />
+    <Content Include="Content\dataTables.tableTools.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\jquery.dataTables.css" />
+    <Content Include="Content\material-design-iconic-font.min.css" />
+    <Content Include="Content\materialadmin.css" />
+    <Content Include="Content\toastr.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\Controllers\HomeController.js" />
-    <Content Include="Scripts\Controllers\LoginController.js" />
+    <Content Include="Scripts\Controllers\ProdutoController.js" />
     <Content Include="Scripts\Factories\AuthHttpResponseInterceptor.js" />
+    <Content Include="Scripts\Material\bootstrap-datepicker.js" />
+    <Content Include="Scripts\Material\bootstrap.min.js" />
+    <Content Include="Scripts\Material\jquery-1.11.2.min.js" />
+    <Content Include="Scripts\Material\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\Material\jquery.autosize.min.js" />
+    <Content Include="Scripts\Material\jquery.nanoscroller.min.js" />
+    <Content Include="Scripts\Material\moment.min.js" />
+    <Content Include="Scripts\Material\spin.min.js" />
+    <Content Include="Scripts\Material\toastr.js" />
+    <Content Include="Scripts\Services\ProdutoService.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -195,10 +214,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Fonts\Material-Design-Iconic-Font.woff" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
@@ -207,6 +228,17 @@
     <Content Include="Views\RoutesDemo\Two.cshtml" />
     <Content Include="Views\RoutesDemo\Three.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\R2L2.Domain\R2L2.Domain.csproj">
+      <Project>{47826b91-351c-4ced-927f-3cab4e2a4f4a}</Project>
+      <Name>R2L2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\R2L2.Infra\R2L2.Infra.csproj">
+      <Project>{f012c1b0-27cf-4368-8651-9758bb4026ed}</Project>
+      <Name>R2L2.Infra</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

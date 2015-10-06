@@ -1,0 +1,124 @@
+﻿<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+@Scripts.Render("~/bundles/R2L2Presentation")
+@Scripts.Render("~/bundles/Material")
+@Styles.Render("~/Content/css")
+
+<div id="base" ng-app="R2L2Presentation" ng-controller="ProdutoController">
+    <div id="content">
+        <div class="section-body">
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-8">
+                    <div class="card">
+                        <div>
+                            <input type="button" ng-click="AddProduto()" value="Adicionar Produto" />
+                            <div class="card-body">
+                                <p>Lista de Produtos</p>
+                                <table id="datatable2" class="table order-column hover dataTable no-footer" role="grid" aria-describedby="datatable2_info" >
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="details-control" rowspan="1" colspan="1" aria-label="Código de barras">Código de Barras</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1" aria-sort="ascending">Descrição</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1" aria-sort="ascending">Estoque</thclass="sorting_asc">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1" aria-sort="ascending">Localização</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1" aria-sort="ascending">Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="produto in produtos">
+                                            <td>
+                                                {{produto.CodigoBarras}}
+                                            </td>
+                                            <td>
+                                                {{produto.Descricao}}
+                                            </td>
+                                            <td>
+                                                {{produto.Estoque}}
+                                            </td>
+                                            <td>
+                                                {{produto.Localizacao}}
+                                            </td>
+                                            <td>
+                                                {{produto.Valor}}
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label ng-click="Atualizar(produto)" class="btn ink-reaction btn-raised btn-primary-light">
+                                                        <input type="radio" name="options" id="option1" />
+                                                        Atualizar
+                                                    </label>
+                                                    <label ng-click="Apagar(produto)" class="btn ink-reaction btn-raised btn-danger">
+                                                        <input type="radio" name="options" id="option2" />
+                                                    Apagar</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-8">
+                    <form class="form">
+                        <div class="card" ng-show="divProduto">
+                            <div class="card-head style-primary">
+                                <header>{{Action}} Produto</header>
+                            </div>
+                            <div class="card-body floating-label">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="codBarras" ng-model="CodigoBarras" />
+                                            <label for="codBarras">
+                                                Código de Barras
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="estq" ng-model="Estoque" />
+                                            <label for="estq">
+                                                Estoque
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" ng-model="Descricao" class="form-control" id="descr" />
+                                    <label for="descr">
+                                        Descrição
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Valor" class="form-control" id="val" />
+                                            <label for="val">
+                                                Valor
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Localizacao" class="form-control" id="local" />
+                                            <label for="local">
+                                                Localização
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-actionbar-row">
+                                <button type="button" class="btn ink-reaction btn-raised btn-default-dark" ng-click="Adicionar()">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
