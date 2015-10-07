@@ -27,6 +27,25 @@
             $scope.Valor = produto.Valor;
             $('#val').addClass('dirty');
 
+            var id = $('#atualizaProd').attr('href');
+            $(id).addClass('active');
+            var leftOffcanvas = ($(id).closest('.offcanvas:first').length > 0);
+            $('body').addClass('offcanvas-expanded');
+            var width = $(id).width();
+            if (width > $(document).width()) {
+                width = $(document).width() - 8;
+                $(id + '.active').css({ 'width': width });
+            }
+            width = '-' + width;
+            var translate = 'translate(' + width + 'px, 0)';
+            $(id + '.active').css({ '-webkit-transform': translate, '-ms-transform': translate, '-o-transform': translate, 'transform': translate });
+            $('#formprod').removeClass('ng-hide');
+
+            if ($('#base > .backdrop').length === 0 && $('#base').data('backdrop') !== 'hidden') {
+                $('<div class="backdrop"></div>').hide().appendTo('#base').fadeIn();
+            }
+
+
         }, function () {
             toastr.error('Erro ao obter o produto');
         });
@@ -63,18 +82,13 @@
                 toastr.error('Erro ao adicionar o produto', '');
             });
         }
-        $('[data-toggle="offcanvas"]').removeClass('expanded');
-        $('.offcanvas-pane').removeClass('active');
-        $('.offcanvas-pane').css({ '-webkit-transform': '', '-ms-transform': '', '-o-transform': '', 'transform': '' });
+    
         ClearFields();
     }
 
     $scope.AddProduto = function () {
-        $('#addprodview').html($.get('Produto/AdicionarProduto'));
-
-        //ClearFields();
-        //$scope.Action = "Add";
-        //$scope.divProduto = true;
+        ClearFields();
+        $scope.Action = "Adicionar";        
     }
 
     $scope.Apagar = function (produto) {
@@ -93,12 +107,12 @@
         $scope.Estoque = "";
         $scope.Localizacao = "";
         $scope.Valor = "";
-        //$('#codBarras').removeClass('dirty');
-        //$('#descr').removeClass('dirty');
-        //$('#estq').removeClass('dirty');
-        //$('#local').removeClass('dirty');
-        //$('#val').removeClass('dirty');
-
+        $('[data-toggle="offcanvas"]').removeClass('expanded');
+        $('.offcanvas-pane').removeClass('active');
+        $('.offcanvas-pane').css({ '-webkit-transform': '', '-ms-transform': '', '-o-transform': '', 'transform': '' });
+        $('#base > .backdrop').fadeOut(function () {
+            $(this).remove();
+        });
     }
 }
 
