@@ -75,5 +75,9 @@ namespace R2L2.Presentation.Controllers
                 return Json(new { erro = true, Mensagem = ex.Message });
             }
         }
+        public ActionResult AdicionarProduto()
+        {
+            return PartialView("Adicionar");
+        }
     }
 }

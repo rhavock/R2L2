@@ -1,8 +1,8 @@
 ﻿var ProdutoController = function ($scope, ProdutoService) {
-    $scope.divProduto = false;
     Listar();
 
     function Listar() {
+
         var getData = ProdutoService.Listar();
         getData.then(function (prod) {
             $scope.produtos = prod.data;
@@ -13,8 +13,7 @@
 
     $scope.Atualizar = function (produto) {
         var getData = ProdutoService.Obter(produto.CodigoBarras);
-
-        $scope.Action = "Update";
+        $scope.Action = "Atualizar";
         getData.then(function (prod) {
             $scope.produto = prod.data;
             $scope.CodigoBarras = produto.CodigoBarras;
@@ -27,7 +26,7 @@
             $('#local').addClass('dirty');
             $scope.Valor = produto.Valor;
             $('#val').addClass('dirty');
-            $scope.divProduto = true;
+
         }, function () {
             toastr.error('Erro ao obter o produto');
         });
@@ -43,41 +42,46 @@
         };
         var getAction = $scope.Action;
 
-        if (getAction == "Add") {
+        if (getAction == "Atualizar") {
+            Produto.CodigoBarras = $scope.CodigoBarras;
+            var getData = ProdutoService.Atualizar(Produto);
+            getData.then(function (msg) {
+                Listar();
+                toastr.success('Atualizado', '');
+                // $scope.divProduto = false;
+            }, function () {
+                toastr.error('Erro ao atualizar o produto', '');
+            });
+        }
+        else {
             var getData = ProdutoService.Adicionar(Produto);
             getData.then(function (msg) {
                 Listar();
                 toastr.success('Adicionado', '');
                 //$scope.divProduto = false;
             }, function () {
-                toastr.error('Erro ao adicionar o produto','');
+                toastr.error('Erro ao adicionar o produto', '');
             });
         }
-        else {
-            Produto.CodigoBarras = $scope.CodigoBarras;
-            var getData = ProdutoService.Atualizar(Produto);
-            getData.then(function (msg) {
-                Listar();
-                toastr.success('Atualizado','');
-               // $scope.divProduto = false;
-            }, function () {
-                toastr.error('Erro ao atualizar o produto','');
-            });
-            
-        }
+        $('[data-toggle="offcanvas"]').removeClass('expanded');
+        $('.offcanvas-pane').removeClass('active');
+        $('.offcanvas-pane').css({ '-webkit-transform': '', '-ms-transform': '', '-o-transform': '', 'transform': '' });
+        ClearFields();
     }
 
     $scope.AddProduto = function () {
-        ClearFields();
-        $scope.Action = "Add";
-        $scope.divProduto = true;
+        $('#addprodview').html($.get('Produto/AdicionarProduto'));
+
+        //ClearFields();
+        //$scope.Action = "Add";
+        //$scope.divProduto = true;
     }
 
     $scope.Apagar = function (produto) {
         var getData = ProdutoService.Apagar(produto);
         getData.then(function (msg) {
             Listar();
-            toastr.success('Produto apagado','')
+            toastr.success('Produto apagado', '')
         }, function () {
             toastr.error('Erro ao apagar o Produto');
         });

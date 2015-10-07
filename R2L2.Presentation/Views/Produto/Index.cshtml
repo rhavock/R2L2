@@ -1,20 +1,34 @@
-﻿<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
-@Scripts.Render("~/bundles/R2L2Presentation")
-@Scripts.Render("~/bundles/Material")
-@Styles.Render("~/Content/css")
+﻿<html lang="en">
+<head>
+    <title>R2L2</title>
 
-<div id="base" ng-app="R2L2Presentation" ng-controller="ProdutoController">
-    <div id="content">
-        <div class="section-body">
-            <div class="row">
-                <div class="col-lg-offset-1 col-md-8">
-                    <div class="card">
-                        <div>
-                            <input type="button" ng-click="AddProduto()" value="Adicionar Produto" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+
+    @Scripts.Render("~/bundles/R2L2Presentation")
+    @Scripts.Render("~/bundles/Material")
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="base" ng-app="R2L2Presentation" ng-controller="ProdutoController">
+        <div id="content">
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-lg-offset-1 col-md-8">
+                        <div class="card">
+                            <div class="card-head style-gray-light">
+                                <header class="bottom"><i class="md md-event-note"></i>Lista de Produtos</header>
+                                <div class="tools">
+                                    <div class="btn-group">
+                                        <a class="btn btn-icon-toggle btn-primary style-gray-light" href="#offcanvasadd" data-toggle="offcanvas">
+                                            <i class="md md-add"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="card-body">
-                                <p>Lista de Produtos</p>
-                                <table id="datatable2" class="table order-column hover dataTable no-footer" role="grid" aria-describedby="datatable2_info" >
+                                <table id="datatable2" class="table order-column hover dataTable no-footer" role="grid" aria-describedby="datatable2_info">
                                     <thead>
                                         <tr role="row">
                                             <th class="details-control" rowspan="1" colspan="1" aria-label="Código de barras">Código de Barras</th>
@@ -49,7 +63,8 @@
                                                     </label>
                                                     <label ng-click="Apagar(produto)" class="btn ink-reaction btn-raised btn-danger">
                                                         <input type="radio" name="options" id="option2" />
-                                                    Apagar</label>
+                                                        Apagar
+                                                    </label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -60,65 +75,83 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-lg-offset-1 col-md-8">
-                    <form class="form">
-                        <div class="card" ng-show="divProduto">
-                            <div class="card-head style-primary">
-                                <header>{{Action}} Produto</header>
-                            </div>
-                            <div class="card-body floating-label">
-                                <div class="row">
-                                    <div class="col-sm-6">
+        </div>
+        <div class="offcanvas">
+            <div id="offcanvasadd" class="offcanvas-pane style-default-light width-12" style="width: 800px;">
+                <div class="offcanvas-head">
+                    <div class="offcanvas-tools">
+                        <a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
+                            <i class="md md-close"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <header>{{Action}} Produto</header>
+                    </div>
+                </div>
+                <div class="nano has-scrollbar" style="height: 378px;">
+                    <div class="nano-content" tabindex="0">
+                        <div class="offcanvas-body">
+                            <br />
+                            <form class="form">
+                                <div id="formprod" class="card" ng-show="divProduto">
+                                  <div class="card-body floating-label">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="codBarras" ng-model="CodigoBarras" />
+                                                    <label for="codBarras">
+                                                        Código de Barras
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="estq" ng-model="Estoque" />
+                                                    <label for="estq">
+                                                        Estoque
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="codBarras" ng-model="CodigoBarras" />
-                                            <label for="codBarras">
-                                                Código de Barras
+                                            <input type="text" ng-model="Descricao" class="form-control" id="descr" />
+                                            <label for="descr">
+                                                Descrição
                                             </label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" ng-model="Valor" class="form-control" id="val" />
+                                                    <label for="val">
+                                                        Valor
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" ng-model="Localizacao" class="form-control" id="local" />
+                                                    <label for="local">
+                                                        Localização
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="estq" ng-model="Estoque" />
-                                            <label for="estq">
-                                                Estoque
-                                            </label>
-                                        </div>
+                                    <div class="card-actionbar-row">
+                                        <button type="button" class="btn ink-reaction btn-raised btn-default-dark" ng-click="Adicionar()">Salvar</button>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" ng-model="Descricao" class="form-control" id="descr" />
-                                    <label for="descr">
-                                        Descrição
-                                    </label>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" ng-model="Valor" class="form-control" id="val" />
-                                            <label for="val">
-                                                Valor
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" ng-model="Localizacao" class="form-control" id="local" />
-                                            <label for="local">
-                                                Localização
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-actionbar-row">
-                                <button type="button" class="btn ink-reaction btn-raised btn-default-dark" ng-click="Adicionar()">Salvar</button>
-                            </div>
+                            </form>
+                        </div>                      
+                    </div>
+                    <div class="nano-pane">
+                        <div class="nano-slider">
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+</html>
