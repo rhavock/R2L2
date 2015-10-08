@@ -24,6 +24,9 @@ namespace R2L2.Presentation
                 .IncludeDirectory("~/Scripts/Services", "*.js")
                 .Include("~/Scripts/R2L2Presentation.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular")
+                .IncludeDirectory("~/Scripts/Angular","*.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/Material")
                   .IncludeDirectory("~/Scripts/Material", "*.js"));
 

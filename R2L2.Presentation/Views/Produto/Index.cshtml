@@ -1,62 +1,59 @@
-﻿<div id="base" ng-controller="ProdutoController">
-    <div id="content">
-        <div class="section-body">
-            <div class="row">
-                <div class="col-lg-offset-1 col-md-8">
-                    <div class="card">
-                        <div class="card-head style-gray-light">
-                            <header class="bottom"><i class="md md-event-note"></i>Lista de Produtos</header>
-                            <div class="tools">
-                                <div class="btn-group">
-                                    <a class="btn btn-icon-toggle btn-primary style-gray-light" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddProduto()">
-                                        <i class="md md-add"></i>
-                                    </a>
-                                </div>
+﻿<div ng-controller="ProdutoController">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-lg-offset-1 col-md-8">
+                <div class="card">
+                    <div class="card-head style-gray-light">
+                        <header class="bottom"><i class="md md-event-note"></i>Lista de Produtos</header>
+                        <div class="tools">
+                            <div class="btn-group">
+                                <a class="btn ink-reaction btn-floating-action btn-primary-bright" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddProduto()">
+                                    <i class="md md-create"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <table id="datatable2" class="table order-column hover dataTable no-footer" role="grid" aria-describedby="datatable2_info">
-                                <thead>
-                                    <tr role="row">
-                                        <th class="details-control" rowspan="1" colspan="1">Código de Barras</th>
-                                        <th class="details-control" rowspan="1" colspan="1">Descrição</th>
-                                        <th class="details-control" rowspan="1" colspan="1">Estoque</th>
-                                        <th class="details-control" rowspan="1" colspan="1">Localização</th>
-                                        <th class="details-control" rowspan="1" colspan="1">Valor</th>
-                                        <th class="details-control" rowspan="1" colspan="1"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="produto in produtos">
-                                        <td>
-                                            {{produto.CodigoBarras}}
-                                        </td>
-                                        <td>
-                                            {{produto.Descricao}}
-                                        </td>
-                                        <td>
-                                            {{produto.Estoque}}
-                                        </td>
-                                        <td>
-                                            {{produto.Localizacao}}
-                                        </td>
-                                        <td>
-                                            {{produto.Valor}}
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <a ng-click="Atualizar(produto)" id="atualizaProd" href="#offcanvasadd" data-toggle="offcanvas" class="btn ink-reaction btn-raised btn-primary-light">
-                                                    Atualizar
-                                                </a>
-                                                <a ng-click="Apagar(produto)" class="btn ink-reaction btn-raised btn-danger">
-                                                    Apagar
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable2" class="table order-column hover dataTable no-footer" role="grid" aria-describedby="datatable2_info">
+                            <thead>
+                                <tr role="row">
+                                    <th class="details-control" rowspan="1" colspan="1">Código de Barras</th>
+                                    <th class="details-control" rowspan="1" colspan="1">Descrição</th>
+                                    <th class="details-control" rowspan="1" colspan="1">Estoque</th>
+                                    <th class="details-control" rowspan="1" colspan="1">Localização</th>
+                                    <th class="details-control" rowspan="1" colspan="1">Valor</th>
+                                    <th class="details-control" rowspan="1" colspan="1"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="produto in produtos">
+                                    <td>
+                                        {{produto.CodigoBarras}}
+                                    </td>
+                                    <td>
+                                        {{produto.Descricao}}
+                                    </td>
+                                    <td>
+                                        {{produto.Estoque}}
+                                    </td>
+                                    <td>
+                                        {{produto.Localizacao}}
+                                    </td>
+                                    <td>
+                                        {{produto.Valor}}
+                                    </td>
+                                    <td>
+                                        <button type="button" ng-click="Atualizar(produto)" id="atualizaProd" href="#offcanvasadd" data-toggle="offcanvas" class="btn ink-reaction btn-floating-action btn-xs btn-default-bright">
+                                            <i class="md md-refresh"></i>
+                                        </button>
+                                        <button type="button" ng-click="Apagar(produto)" class="btn ink-reaction btn-floating-action btn-xs btn-default-bright">
+                                            <i class="md md-clear"></i>
+                                        </button>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -125,7 +122,9 @@
                                     </div>
                                 </div>
                                 <div class="card-actionbar-row">
-                                    <button type="button" class="btn ink-reaction btn-raised btn-default-dark" ng-click="Adicionar()">Salvar</button>
+                                    <button type="button" class="btn ink-reaction btn-floating-action btn-primary-bright pull-right" ng-click="Adicionar()">
+                                        <i class="md md-save"></i>
+                                    </button>
                                 </div>
                             </div>
                         </form>

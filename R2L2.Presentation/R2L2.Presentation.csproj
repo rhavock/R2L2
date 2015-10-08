@@ -190,12 +190,15 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\Controllers\ProdutoController.js" />
     <Content Include="Scripts\Factories\AuthHttpResponseInterceptor.js" />
+    <Content Include="Scripts\Angular\angular-route.min.js" />
+    <Content Include="Scripts\Angular\angular.min.js" />
     <Content Include="Scripts\Material\bootstrap-datepicker.js" />
     <Content Include="Scripts\Material\bootstrap.min.js" />
     <Content Include="Scripts\Material\jquery-1.11.2.min.js" />
     <Content Include="Scripts\Material\jquery-migrate-1.2.1.min.js" />
     <Content Include="Scripts\Material\jquery.autosize.min.js" />
     <Content Include="Scripts\Material\jquery.nanoscroller.min.js" />
+    <Content Include="Scripts\Material\menu.js" />
     <Content Include="Scripts\Material\moment.min.js" />
     <Content Include="Scripts\Material\offcanvas.js" />
     <Content Include="Scripts\Material\spin.min.js" />
@@ -230,7 +233,7 @@
     <Content Include="Views\RoutesDemo\Three.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
-    <Content Include="Views\Produto\Adicionar.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\R2L2.Domain\R2L2.Domain.csproj">

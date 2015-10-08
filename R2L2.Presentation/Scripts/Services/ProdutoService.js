@@ -1,16 +1,16 @@
 ﻿var ProdutoService = function ($http) {
     this.Listar = function () {
-        return $http.get("Produto/Listar");
+        return $http.get("/Produto/Listar");
     }
 
     this.Obter = function (CodigoBarras) {
-        return $http.get("Produto/Obter?CodigoBarras=" + CodigoBarras);
+        return $http.get("/Produto/Obter?CodigoBarras=" + CodigoBarras);
     }
 
     this.Atualizar = function (produto) {
         var response = $http({
             method: "post",
-            url: "Produto/Atualizar",
+            url: "/Produto/Atualizar",
             data: JSON.stringify(produto),
             dataType: "json"
         });
@@ -19,7 +19,7 @@
     this.Adicionar = function (produto) {
         var response = $http({
             method: "post",
-            url: "Produto/Adicionar",
+            url: "/Produto/Adicionar",
             data: JSON.stringify(produto),
             dataType: "json"
         });
@@ -29,7 +29,7 @@
     this.Apagar = function (produto) {
         var response = $http({
             method: "post",
-            url: "Produto/Apagar",
+            url: "/Produto/Apagar",
             data: JSON.stringify(produto),
             dataType: "json"
         });

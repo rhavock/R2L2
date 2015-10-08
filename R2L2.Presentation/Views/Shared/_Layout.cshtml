@@ -1,0 +1,169 @@
+﻿
+<html lang="en">
+<head>
+    <title>R2L2</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>*@
+    <script src="~/Scripts/Angular/angular-route.min.js"></script>
+    <script src="~/Scripts/Angular/angular.min.js"></script>
+    
+    @Scripts.Render("~/bundles/R2L2Presentation")
+    @Scripts.Render("~/bundles/Material")
+    @Styles.Render("~/Content/css")
+</head>
+<body ng-app="R2L2Presentation" class="menubar-hoverable header-fixed">
+    <header id="header">
+        <div class="headerbar">
+            <div class="headerbar-left">
+                <ul class="header-nav header-nav-options">
+                    <li class="header-nav-brand">
+                        <div class="brand-holder">
+                            <a href="@Url.Action("Index","Home")">
+                                <span class="text-lg text-bold text-primary">R2L2</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="headerbar-right">
+                <ul class="header-nav header-nav-options">
+                    @*<li>
+                            <form class="navbar-search" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="headerSearch" placeholder="Adicione uma palavra chave" />
+                                </div>
+                                <button type="button" class="btn btn-icon-toggle ink-reaction">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </li>*@
+                    <li class="dropdown hidden-xs">
+                        <a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
+                            <i class="fa fa-bell"></i>
+                            <sup class="badge style-danger">0</sup>
+                        </a>
+                        <ul class="dropdown-menu animation-expand">
+                            <li class="dropdown-header">Notificações</li>
+                            <li>
+                                <a class="alert alert-callout alert-warning" href="javascript:void(0);">
+                                    <img class="pull-right img-circle dropdown-avatar" src="" alt />
+                                    <strong>Usuário</strong>
+                                    <br />
+                                    <small>Vendendo tudo!!</small>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown hidden-xs">
+                        <a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
+                            <i class="fa fa-area-chart"></i>
+                        </a>
+                        <ul class="dropdown-menu animation-expand">
+                            <li class="dropdown-header">Vendas</li>
+                            <li class="dropdown-progress">
+                                <a href="javascript:void(0);">
+                                    <div class="dropdown-label">
+                                        <span class="text-light">
+                                            Vendas
+                                            <strong>Hoje</strong>
+                                        </span>
+                                        <strong class="pull-right">50%</strong>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger" style="width: 50%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="header-nav header-nav-profile">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle ink-reaction" data-toggle="dropdown" aria-expanded="false">
+                            <img src="http://www.otempo.com.br/polopoly_fs/3.187615.1366481880!image/image.jpg_gen/derivatives/main-single-horizontal-img-article-fit_620/image.jpg" alt />
+                            <span class="profile-info">
+                                Renato Silva
+                                <small>Administrador</small>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu animation-dock">
+                            <li class="dropdown-header">Configuração</li>
+                            <li>
+                                <a href="#">Perfil</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-fw fa-power-off text-danger"></i>
+                                    Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="base">
+        <div id="content">
+            <div ng-view></div>
+           @RenderBody()
+        </div>
+        <div id="menubar" class="menubar-inverse animate">
+            <div class="menubar-fixed-panel">
+                <div>
+                    <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <div class="expanded">
+                    <a href="~/Views/Home/Index.cshtml">
+                        <span class="text-lg text-bold text-primary">R2L2</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nano has-scrollbar" style="height:86px;">
+                <div class="nano-content" tabindex="0" style="right: -17px;">
+                    <div class="menubar-scroll-panel" style="padding-bottom: 55px;">
+                        <ul id="main-menu" class="gui-controls">
+                            <li class="active expanded">
+                                <a href="@Url.Action("Index","Home")" class="active">
+                                    <div class="gui-icon">
+                                        <i class="md md-home"></i>
+                                    </div>
+                                    <span class="title">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index","Produto")">
+                                    <div class="gui-icon">
+                                        <i class="md md-event-note"></i>
+                                    </div>
+                                    <span class="title">Produtos</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div class="menubar-foot-panel">
+                            <small class="no-linebreak hidden-folded">
+                                <span class="opacity-75">© 2015</span>
+                                <strong>Bigode Productions</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="nano-pane" style="display:block;">
+                    <div class="nano-slider" style="height:20px; transform: translate(0px,66px);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
