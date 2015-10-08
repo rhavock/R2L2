@@ -2,12 +2,15 @@
     <div class="section-body">
         <div class="row">
             <div class="col-lg-offset-1 col-md-8">
-                <div class="card">
-                    <div class="card-head style-gray-light">
-                        <header class="bottom"><i class="md md-event-note"></i>Lista de Produtos</header>
+                <div class="card card-underline">
+                    <div class="card-head">
+                        <header style="padding-top:21px;">
+                            <i class="md md-event-note"></i>
+                            Lista de Produtos
+                        </header>
                         <div class="tools">
-                            <div class="btn-group">
-                                <a class="btn ink-reaction btn-floating-action btn-primary-bright" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddProduto()">
+                            <div class="btn-group" style="padding-top:8px;">
+                                <a class="btn ink-reaction btn-floating-action btn-info" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddProduto()">
                                     <i class="md md-create"></i>
                                 </a>
                             </div>
@@ -43,10 +46,10 @@
                                         {{produto.Valor}}
                                     </td>
                                     <td>
-                                        <button type="button" ng-click="Atualizar(produto)" id="atualizaProd" href="#offcanvasadd" data-toggle="offcanvas" class="btn ink-reaction btn-floating-action btn-xs btn-default-bright">
+                                        <button type="button" ng-click="Atualizar(produto)" id="atualizaProd" href="#offcanvasadd" data-toggle="offcanvas" class="btn ink-reaction btn-floating-action btn-xs btn-primary-light">
                                             <i class="md md-refresh"></i>
                                         </button>
-                                        <button type="button" ng-click="Apagar(produto)" class="btn ink-reaction btn-floating-action btn-xs btn-default-bright">
+                                        <button type="button" ng-click="Apagar(produto)" class="btn ink-reaction btn-floating-action btn-xs btn-danger">
                                             <i class="md md-clear"></i>
                                         </button>
 
@@ -63,20 +66,24 @@
         <div id="offcanvasadd" class="offcanvas-pane style-default-light width-12" style="width: 800px;">
             <div class="offcanvas-head">
                 <div class="offcanvas-tools">
-                    <a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
+                    <a class="btn btn-icon-toggle pull-right" data-dismiss="offcanvas">
                         <i class="md md-close"></i>
                     </a>
                 </div>
-                <div>
-                    <header>{{Action}} Produto</header>
-                </div>
             </div>
+            <br />
             <div class="nano has-scrollbar" style="height: 378px;">
                 <div class="nano-content" tabindex="0">
                     <div class="offcanvas-body">
-                        <br />
+                       
                         <form class="form">
-                            <div id="formprod" class="card" ng-show="divProduto">
+                            <div id="formprod" class="card card-underline" ng-show="divProduto">
+                                <div class="card-head">
+                                    <header style="padding-top:21px;">
+                                        <i class="md md-create"></i>
+                                        {{Action}} Produtos
+                                    </header>
+                                </div>
                                 <div class="card-body floating-label">
                                     <div class="row">
                                         <div class="col-sm-6">
@@ -89,10 +96,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="estq" ng-model="Estoque" />
-                                                <label for="estq">
-                                                    Estoque
-                                                </label>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -100,6 +104,12 @@
                                         <input type="text" ng-model="Descricao" class="form-control" id="descr" />
                                         <label for="descr">
                                             Descrição
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" ng-model="Marca" class="form-control" id="marca" />
+                                        <label for="marca">
+                                            Marca
                                         </label>
                                     </div>
                                     <div class="row">
@@ -119,10 +129,26 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="estq" ng-model="Estoque" />
+                                                <label for="estq">
+                                                    Estoque
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="estqmin" ng-model="EstoqueMinimo" />
+                                                <label for="estqmin">
+                                                    Estoque mínimo
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-actionbar-row">
-                                    <button type="button" class="btn ink-reaction btn-floating-action btn-primary-bright pull-right" ng-click="Adicionar()">
+                                    <button type="button" class="btn ink-reaction btn-floating-action btn-info pull-right" ng-click="Adicionar()">
                                         <i class="md md-save"></i>
                                     </button>
                                 </div>

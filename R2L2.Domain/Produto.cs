@@ -15,6 +15,9 @@ namespace R2L2.Domain
         public string Localizacao { get; set; }
         public double Oferta { get; set; }
         public double Valor { get; set; }
+        public string Marca { get; set; }
+
+
 
         public void Adicionar(IRepositorio<Produto> iprodutorepositorio)
         {

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @*<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>*@
-    <script src="~/Scripts/Angular/angular-route.min.js"></script>
+    @*<script src="~/Scripts/Angular/angular-route.min.js"></script>*@
     <script src="~/Scripts/Angular/angular.min.js"></script>
     
     @Scripts.Render("~/bundles/R2L2Presentation")
@@ -112,8 +112,7 @@
         </div>
     </header>
     <div id="base">
-        <div id="content">
-            <div ng-view></div>
+        <div id="content">            
            @RenderBody()
         </div>
         <div id="menubar" class="menubar-inverse animate">

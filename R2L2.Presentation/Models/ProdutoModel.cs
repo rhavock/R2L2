@@ -10,8 +10,11 @@ namespace R2L2.Presentation.Models
         public string CodigoBarras { get; set; }
         public string Descricao { get; set; }
         public int Estoque { get; set; }
+        public int EstoqueMin { get; set; }
         public string Localizacao { get; set; }
+        public double Oferta { get; set; }
         public double Valor { get; set; }
+        public string Marca { get; set; }
 
         internal Produto CriarDominio()
         {
@@ -21,7 +24,10 @@ namespace R2L2.Presentation.Models
                 Descricao = Descricao,
                 Estoque = Estoque,
                 Localizacao = Localizacao,
-                Valor = Valor
+                Valor = Valor,
+                EstoqueMin = EstoqueMin,
+                Marca = Marca,
+                Oferta = Oferta
             };
         }
 
@@ -32,6 +38,9 @@ namespace R2L2.Presentation.Models
             Estoque = produto.Estoque;
             Localizacao = produto.Localizacao;
             Valor = produto.Valor;
+            EstoqueMin = produto.EstoqueMin;
+            Marca = produto.Marca;
+            Oferta = produto.Oferta;
             return this;
         }
 
@@ -45,7 +54,10 @@ namespace R2L2.Presentation.Models
                     Descricao = prod.Descricao,
                     Estoque = prod.Estoque,
                     Localizacao = prod.Localizacao,
-                    Valor = prod.Valor
+                    Valor = prod.Valor,
+                    EstoqueMin = prod.EstoqueMin,
+                    Marca = prod.Marca,
+                    Oferta = prod.Oferta
                 };
             }
         }

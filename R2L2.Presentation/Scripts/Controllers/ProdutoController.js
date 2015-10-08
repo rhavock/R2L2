@@ -26,7 +26,11 @@
             $('#local').addClass('dirty');
             $scope.Valor = produto.Valor;
             $('#val').addClass('dirty');
-
+            $scope.Marca = produto.Marca;
+            $('#marca').addClass('dirty');
+            $scope.EstoqueMin = produto.EstoqueMin
+            $('#estqmin').addClass('dirty');
+            
             var id = $('#atualizaProd').attr('href');
             $(id).addClass('active');
             var leftOffcanvas = ($(id).closest('.offcanvas:first').length > 0);
@@ -57,7 +61,9 @@
             Descricao: $scope.Descricao,
             Estoque: $scope.Estoque,
             Localizacao: $scope.Localizacao,
-            Valor: $scope.Valor
+            Valor: $scope.Valor,
+            Marca: $scope.Marca,
+            EstoqueMin: $scope.EstoqueMin
         };
         var getAction = $scope.Action;
 
