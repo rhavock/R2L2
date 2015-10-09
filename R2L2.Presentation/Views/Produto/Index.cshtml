@@ -5,62 +5,102 @@
                 <div class="card card-underline">
                     <div class="card-head">
                         <header style="padding-top:21px;">
-                            <i class="md md-event-note"></i>
+                            <i class="md md-local-offer"></i>
                             Lista de Produtos
                         </header>
-                        <div class="tools">
-                            <div class="btn-group" style="padding-top:8px;">
-                                <a class="btn ink-reaction btn-floating-action btn-info" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddProduto()">
-                                    <i class="md md-create"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                     <div class="card-body">
-                        <table id="datatable2" class="table order-column hover dataTable no-footer" role="grid" aria-describedby="datatable2_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="details-control" rowspan="1" colspan="1">Código de Barras</th>
-                                    <th class="details-control" rowspan="1" colspan="1">Descrição</th>
-                                    <th class="details-control" rowspan="1" colspan="1">Estoque</th>
-                                    <th class="details-control" rowspan="1" colspan="1">Localização</th>
-                                    <th class="details-control" rowspan="1" colspan="1">Valor</th>
-                                    <th class="details-control" rowspan="1" colspan="1"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="produto in produtos">
-                                    <td>
-                                        {{produto.CodigoBarras}}
-                                    </td>
-                                    <td>
-                                        {{produto.Descricao}}
-                                    </td>
-                                    <td>
-                                        {{produto.Estoque}}
-                                    </td>
-                                    <td>
-                                        {{produto.Localizacao}}
-                                    </td>
-                                    <td>
-                                        {{produto.Valor}}
-                                    </td>
-                                    <td>
-                                        <button type="button" ng-click="Atualizar(produto)" id="atualizaProd" href="#offcanvasadd" data-toggle="offcanvas" class="btn ink-reaction btn-floating-action btn-xs btn-primary-light">
-                                            <i class="md md-refresh"></i>
-                                        </button>
-                                        <button type="button" ng-click="Apagar(produto)" class="btn ink-reaction btn-floating-action btn-xs btn-danger">
-                                            <i class="md md-clear"></i>
-                                        </button>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="datatable2" class="table order-column hover dataTable no-footer">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" aria-controls="datatable2" rowspan="1" colspan="1">Código de Barras</th>
+                                        <th class="sorting" aria-controls="datatable2" rowspan="1" colspan="1">Descrição</th>
+                                        <th class="sorting" aria-controls="datatable2" rowspan="1" colspan="1">Valor</th>
+                                        <th class="details-control sorting-disable" aria-controls="datatable2" rowspan="1" colspan="1"></th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-repeat="produto in produtos">
+                                    <tr onmouseover="init_table_list(this)" class="grid-toggle">
+                                        <td>
+                                            {{produto.CodigoBarras}}
+                                        </td>
+                                        <td>
+                                            {{produto.Descricao}}
+                                        </td>
+                                        <td>
+                                            {{produto.Valor}}
+                                        </td>
+                                        <td>
+                                            <button type="button" ng-click="Atualizar(produto)" id="atualizaProd" href="#offcanvasadd" data-toggle="offcanvas" class="btn ink-reaction btn-floating-action btn-xs btn-primary-light">
+                                                <i class="md md-create"></i>
+                                            </button>
+                                            <button type="button" ng-click="Apagar(produto)" class="btn ink-reaction btn-floating-action btn-xs btn-danger">
+                                                <i class="md md-delete"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="grid-detail">
+                                        <td colspan="6">
+                                            <div class="card card-underline">
+                                                <div class="card-head">
+                                                    <header style="padding-top:21px;">Detalhes</header>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <label for="Descricao" class="col-sm-2 control-label">Descrição</label>
+                                                        <div class="col-sm-10">
+                                                            <label class="form-control" id="Descricao">{{produto.Descricao}}</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="marca" class="col-sm-2 control-label">Marca</label>
+                                                        <div class="col-sm-10">
+                                                            <label class="form-control" id="marca">{{produto.Marca}}</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="estoque" class="col-sm-4 control-label">Estoque</label>
+                                                                <div class="col-sm-8">
+                                                                    <label class="form-control" id="estoque">{{produto.Estoque}}</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="estoquemin" class="col-sm-4 control-label">Estoque Mínimo</label>
+                                                                <div class="col-sm-8">
+                                                                    <label class="form-control" id="estoquemin">{{produto.EstoqueMin}}</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="valor" class="col-sm-4 control-label">Valor</label>
+                                                                <div class="col-sm-8">
+                                                                    <label class="form-control" id="valor">{{produto.Valor}}</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    <tr />
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="btn-group pull-right" style="padding-bottom:30px;padding-right:30px;">
+        <a class="btn ink-reaction btn-floating-action btn-info" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddProduto()">
+            <i class="md md-insert-drive-file"></i>
+        </a>
     </div>
     <div class="offcanvas">
         <div id="offcanvasadd" class="offcanvas-pane style-default-light width-12" style="width: 800px;">
@@ -75,7 +115,6 @@
             <div class="nano has-scrollbar" style="height: 378px;">
                 <div class="nano-content" tabindex="0">
                     <div class="offcanvas-body">
-                       
                         <form class="form">
                             <div id="formprod" class="card card-underline" ng-show="divProduto">
                                 <div class="card-head">
@@ -96,7 +135,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                               
+
                                             </div>
                                         </div>
                                     </div>
@@ -147,13 +186,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-actionbar-row">
-                                    <button type="button" class="btn ink-reaction btn-floating-action btn-info pull-right" ng-click="Adicionar()">
-                                        <i class="md md-save"></i>
-                                    </button>
-                                </div>
                             </div>
                         </form>
+                        <div class="btn-group pull-right" style="padding-bottom:50px;">
+                            <button type="button" class="btn ink-reaction btn-floating-action btn-info pull-right" ng-click="Adicionar()">
+                                <i class="md md-save"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="nano-pane">

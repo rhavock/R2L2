@@ -10,7 +10,7 @@ using R2L2.Presentation.Models;
 
 namespace R2L2.Presentation.Controllers
 {
-    public class ProdutoController:Controller
+    public class ProdutoController: Controller
     {
         public ActionResult Index()
         {
@@ -78,6 +78,6 @@ namespace R2L2.Presentation.Controllers
         public ActionResult AdicionarProduto()
         {
             return PartialView("Adicionar");
-        }
+        }       
     }
 }

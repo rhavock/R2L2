@@ -8006,3 +8006,17 @@ li.L8 {
 }
 /* Alternate shading for lines */
 
+.grid-detail{
+  
+    display:none;
+    padding: 20px;
+}
+.grid-detail:hover{
+    background-color: transparent!important;        
+}
+.grid-detail-show{
+    background-color :red
+}
+.grid-toggle, .grid-detail-show{
+    cursor: pointer;
+}

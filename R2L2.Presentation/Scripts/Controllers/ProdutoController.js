@@ -1,6 +1,6 @@
 ﻿var ProdutoController = function ($scope, ProdutoService) {
     Listar();
-
+   // init_table_list('datatable2');
     function Listar() {
 
         var getData = ProdutoService.Listar();
@@ -9,6 +9,7 @@
         }, function () {
             toastr.error('Error ao carregar os produtos')
         });
+
     };
 
     $scope.Atualizar = function (produto) {
@@ -30,7 +31,7 @@
             $('#marca').addClass('dirty');
             $scope.EstoqueMin = produto.EstoqueMin
             $('#estqmin').addClass('dirty');
-            
+
             var id = $('#atualizaProd').attr('href');
             $(id).addClass('active');
             var leftOffcanvas = ($(id).closest('.offcanvas:first').length > 0);
@@ -48,13 +49,27 @@
             if ($('#base > .backdrop').length === 0 && $('#base').data('backdrop') !== 'hidden') {
                 $('<div class="backdrop"></div>').hide().appendTo('#base').fadeIn();
             }
-
+            evalScrollbar();
 
         }, function () {
             toastr.error('Erro ao obter o produto');
         });
     }
 
+    evalScrollbar = function () {
+        if (!$.isFunction($.fn.nanoScroller)) {
+            return;
+        }
+        var menu = $('.offcanvas-pane.active');
+        if (menu.length === 0)
+            return; var menuScroller = $('.offcanvas-pane.active .offcanvas-body');
+        var parent = menuScroller.parent();
+        if (parent.hasClass('nano-content') === false) {
+            menuScroller.wrap('<div class="nano"><div class="nano-content"></div></div>');
+        }
+        var height = $(window).height() - menu.find('.nano').position().top;
+        var scroller = menuScroller.closest('.nano'); scroller.css({ height: height }); scroller.nanoScroller({ preventPageScrolling: true });
+    };
     $scope.Adicionar = function () {
         var Produto = {
             CodigoBarras: $scope.CodigoBarras,
@@ -88,13 +103,13 @@
                 toastr.error('Erro ao adicionar o produto', '');
             });
         }
-    
+
         ClearFields();
     }
 
     $scope.AddProduto = function () {
         ClearFields();
-        $scope.Action = "Adicionar";        
+        $scope.Action = "Adicionar";
     }
 
     $scope.Apagar = function (produto) {
@@ -113,6 +128,9 @@
         $scope.Estoque = "";
         $scope.Localizacao = "";
         $scope.Valor = "";
+        $scope.Marca = "";
+        $scope.EstoqueMin = "";
+
         $('[data-toggle="offcanvas"]').removeClass('expanded');
         $('.offcanvas-pane').removeClass('active');
         $('.offcanvas-pane').css({ '-webkit-transform': '', '-ms-transform': '', '-o-transform': '', 'transform': '' });

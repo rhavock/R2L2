@@ -1,0 +1,68 @@
+﻿<div ng-controller="ClienteController">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-lg-offset-1 col-md-8">
+                <div class="card card-underline">
+                    <div class="card-head">
+                        <header style="padding-top:21px">
+                            <i class="md md-new"></i>
+                            Lista de Clientes
+                        </header>
+                    </div>
+                    <div class="card-body">
+                        <table id="dataCliente" class="table order-column hover dataTable no-footer">
+                            <thead>
+                                <tr>
+                                    <th>CPF</th>
+                                    <th>Nome</th>
+                                    <th class="details-control"></th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="cliente in clientes">
+                                <tr onmouseover="init_table_list(this)" class="grid-toggle">
+                                    <td>
+                                        {{cliente.Cpf}}
+                                    </td>
+                                    <td>
+                                        {{cliente.Nome}}
+                                    </td>
+                                    <td>
+                                        <button type="button" ng-click="Atualizar(cliente)" id="atualizaProd" href="#offcanvasadd" data-toggle="offcanvas" class="btn ink-reaction btn-floating-action btn-xs btn-primary-light">
+                                            <i class="md md-create"></i>
+                                        </button>
+                                        <button type="button" ng-click="Apagar(cliente)" class="btn ink-reaction btn-floating-action btn-xs btn-danger">
+                                            <i class="md md-delete"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="grid-detail">
+                                    <td colspan="3">
+                                        <div class="card card-underline">
+                                            <div class="card-head">
+                                                <header style="padding-top:21px">Detalhes</header>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <label for="cpf" class="col-sm-2 control-label">CPF</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="form-control" id="cpf">{{cliente.Cpf}}</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="nome" class="col-sm-2 control-label">Nome</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="form-control" id="nome">{{cliente.Nome}}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -167,6 +167,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Models\ClienteModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
@@ -188,12 +190,14 @@
     <Content Include="Content\toastr.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Controllers\ClienteController.js" />
     <Content Include="Scripts\Controllers\ProdutoController.js" />
     <Content Include="Scripts\Factories\AuthHttpResponseInterceptor.js" />
     <Content Include="Scripts\Angular\angular-route.min.js" />
     <Content Include="Scripts\Angular\angular.min.js" />
     <Content Include="Scripts\Material\bootstrap-datepicker.js" />
     <Content Include="Scripts\Material\bootstrap.min.js" />
+    <Content Include="Scripts\Material\grid.js" />
     <Content Include="Scripts\Material\jquery-1.11.2.min.js" />
     <Content Include="Scripts\Material\jquery-migrate-1.2.1.min.js" />
     <Content Include="Scripts\Material\jquery.autosize.min.js" />
@@ -203,6 +207,7 @@
     <Content Include="Scripts\Material\offcanvas.js" />
     <Content Include="Scripts\Material\spin.min.js" />
     <Content Include="Scripts\Material\toastr.js" />
+    <Content Include="Scripts\Services\ClienteService.js" />
     <Content Include="Scripts\Services\ProdutoService.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -234,6 +239,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\R2L2.Domain\R2L2.Domain.csproj">
