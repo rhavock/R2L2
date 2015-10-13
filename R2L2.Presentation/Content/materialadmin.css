@@ -8007,12 +8007,12 @@ li.L8 {
 /* Alternate shading for lines */
 
 .grid-detail{
-  
+    background-color:lightgrey!important;
     display:none;
     padding: 20px;
 }
 .grid-detail:hover{
-    background-color: transparent!important;        
+    background-color: transparent;        
 }
 .grid-detail-show{
     background-color :red

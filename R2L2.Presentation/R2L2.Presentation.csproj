@@ -184,6 +184,9 @@
     <Content Include="Content\dataTables.colVis.css" />
     <Content Include="Content\dataTables.tableTools.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Images\512.png" />
+    <Content Include="Content\Images\Media_Viewer_Icon_-_Tag.svg.png" />
+    <Content Include="Content\Images\Misc-User-icon.png" />
     <Content Include="Content\jquery.dataTables.css" />
     <Content Include="Content\material-design-iconic-font.min.css" />
     <Content Include="Content\materialadmin.css" />
@@ -233,13 +236,12 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\R2L2Presentation.js" />
-    <Content Include="Views\RoutesDemo\One.cshtml" />
-    <Content Include="Views\RoutesDemo\Two.cshtml" />
-    <Content Include="Views\RoutesDemo\Three.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Produto\Adicionar.cshtml" />
+    <Content Include="Views\Cliente\Adicionar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\R2L2.Domain\R2L2.Domain.csproj">

@@ -1,9 +1,14 @@
 ﻿<div ng-controller="ProdutoController">
     <div class="section-body">
-        <div class="row">
-            <div class="col-lg-offset-1 col-md-8">
+        <div class="col-lg-offset-1 col-md-8">
+            <div class="row">
+                <div class="btn-group pull-right" style="z-index:5;position:absolute;padding-top:27px;padding-left:94%;">
+                    <a class="btn ink-reaction btn-floating-action btn-lg btn-info" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddProduto()">
+                        <i class="md md-insert-drive-file"></i>
+                    </a>
+                </div>
                 <div class="card card-underline">
-                    <div class="card-head">
+                    <div class="card-head style-gray-light">
                         <header style="padding-top:21px;">
                             <i class="md md-local-offer"></i>
                             Lista de Produtos
@@ -42,11 +47,8 @@
                                     </tr>
                                     <tr class="grid-detail">
                                         <td colspan="6">
-                                            <div class="card card-underline">
-                                                <div class="card-head">
-                                                    <header style="padding-top:21px;">Detalhes</header>
-                                                </div>
-                                                <div class="card-body">
+                                            <div class="card">
+                                                <div class="card-body" style="padding-bottom:0;">
                                                     <div class="form-group">
                                                         <label for="Descricao" class="col-sm-2 control-label">Descrição</label>
                                                         <div class="col-sm-10">
@@ -97,109 +99,5 @@
             </div>
         </div>
     </div>
-    <div class="btn-group pull-right" style="padding-bottom:30px;padding-right:30px;">
-        <a class="btn ink-reaction btn-floating-action btn-info" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddProduto()">
-            <i class="md md-insert-drive-file"></i>
-        </a>
-    </div>
-    <div class="offcanvas">
-        <div id="offcanvasadd" class="offcanvas-pane style-default-light width-12" style="width: 800px;">
-            <div class="offcanvas-head">
-                <div class="offcanvas-tools">
-                    <a class="btn btn-icon-toggle pull-right" data-dismiss="offcanvas">
-                        <i class="md md-close"></i>
-                    </a>
-                </div>
-            </div>
-            <br />
-            <div class="nano has-scrollbar" style="height: 378px;">
-                <div class="nano-content" tabindex="0">
-                    <div class="offcanvas-body">
-                        <form class="form">
-                            <div id="formprod" class="card card-underline" ng-show="divProduto">
-                                <div class="card-head">
-                                    <header style="padding-top:21px;">
-                                        <i class="md md-create"></i>
-                                        {{Action}} Produtos
-                                    </header>
-                                </div>
-                                <div class="card-body floating-label">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="codBarras" ng-model="CodigoBarras" />
-                                                <label for="codBarras">
-                                                    Código de Barras
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" ng-model="Descricao" class="form-control" id="descr" />
-                                        <label for="descr">
-                                            Descrição
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" ng-model="Marca" class="form-control" id="marca" />
-                                        <label for="marca">
-                                            Marca
-                                        </label>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" ng-model="Valor" class="form-control" id="val" />
-                                                <label for="val">
-                                                    Valor
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" ng-model="Localizacao" class="form-control" id="local" />
-                                                <label for="local">
-                                                    Localização
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="estq" ng-model="Estoque" />
-                                                <label for="estq">
-                                                    Estoque
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="estqmin" ng-model="EstoqueMinimo" />
-                                                <label for="estqmin">
-                                                    Estoque mínimo
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="btn-group pull-right" style="padding-bottom:50px;">
-                            <button type="button" class="btn ink-reaction btn-floating-action btn-info pull-right" ng-click="Adicionar()">
-                                <i class="md md-save"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="nano-pane">
-                    <div class="nano-slider">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @Html.Partial("Adicionar")
 </div>

@@ -4,7 +4,7 @@ using R2L2.Domain;
 
 namespace R2L2.Presentation.Models
 {
-    internal class ClienteModel
+    public class ClienteModel
     {
         public double Desconto { get; set; }
         public string Nome { get; set; }
@@ -39,5 +39,41 @@ namespace R2L2.Presentation.Models
                 };
             }
         }
+
+        internal Cliente CriarDominio()
+        {
+            return new Cliente
+            {
+                Nome = this.Nome,
+                Cpf = this.Cpf,
+                Desconto = this.Desconto,
+                Endereco = new Endereco
+                {
+                    Bairro = this.Bairro,
+                    Cep = this.Cep,
+                    Cidade = this.Cidade,
+                    Numero = this.Numero,
+                    Referencia = this.Referencia,
+                    Rua = this.Rua,
+                    UF = this.UF
+                }
+            };
+        }
+
+        internal ClienteModel CriarModel(Cliente cliente)
+        {
+            Desconto = cliente.Desconto;
+            Nome = cliente.Nome;
+            Cpf = cliente.Cpf;
+            Bairro = cliente.Endereco.Bairro;
+            Cep = cliente.Endereco.Cep;
+            Cidade = cliente.Endereco.Cidade;
+            Numero = cliente.Endereco.Numero;
+            Referencia = cliente.Endereco.Referencia;
+            Rua = cliente.Endereco.Rua;
+            UF = cliente.Endereco.UF;
+            return this;
+        }
     }
+    
 }
