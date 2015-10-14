@@ -168,12 +168,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
+    <Compile Include="Models\PedidoModel.cs" />
     <Compile Include="Models\ClienteModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Models\ProdutoModel.cs" />
-    <Compile Include="Controllers\RoutesDemoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,6 +184,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\dataTables.colVis.css" />
     <Content Include="Content\dataTables.tableTools.css" />
+    <Content Include="Content\dropzone-theme.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Images\512.png" />
     <Content Include="Content\Images\Media_Viewer_Icon_-_Tag.svg.png" />
@@ -194,12 +196,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\Controllers\ClienteController.js" />
+    <Content Include="Scripts\Controllers\PedidoController.js" />
     <Content Include="Scripts\Controllers\ProdutoController.js" />
     <Content Include="Scripts\Factories\AuthHttpResponseInterceptor.js" />
     <Content Include="Scripts\Angular\angular-route.min.js" />
     <Content Include="Scripts\Angular\angular.min.js" />
     <Content Include="Scripts\Material\bootstrap-datepicker.js" />
     <Content Include="Scripts\Material\bootstrap.min.js" />
+    <Content Include="Scripts\Material\DragnDrop.js" />
+    <Content Include="Scripts\Material\dropzone.min.js" />
     <Content Include="Scripts\Material\grid.js" />
     <Content Include="Scripts\Material\jquery-1.11.2.min.js" />
     <Content Include="Scripts\Material\jquery-migrate-1.2.1.min.js" />
@@ -211,8 +216,10 @@
     <Content Include="Scripts\Material\spin.min.js" />
     <Content Include="Scripts\Material\toastr.js" />
     <Content Include="Scripts\Services\ClienteService.js" />
+    <Content Include="Scripts\Services\PedidoService.js" />
     <Content Include="Scripts\Services\ProdutoService.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Cliente\Adicionar.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -241,7 +248,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Produto\Adicionar.cshtml" />
-    <Content Include="Views\Cliente\Adicionar.cshtml" />
+    <Content Include="Views\Pedido\Index.cshtml" />
+    <Content Include="Views\Pedido\Adicionar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\R2L2.Domain\R2L2.Domain.csproj">

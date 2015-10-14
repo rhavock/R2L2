@@ -1,0 +1,123 @@
+﻿<div class="offcanvas">
+    <div id="offcanvasadd" class="offcanvas-pane style-default-light width-12" style="width: 800px;">
+        <div class="offcanvas-head">
+            <div class="offcanvas-tools">
+                <a class="btn btn-icon-toggle pull-right" data-dismiss="offcanvas">
+                    <i class="md md-close"></i>
+                </a>
+            </div>
+        </div>
+        <br />
+        <div class="btn-group pull-right" style="z-index:5;position:absolute;padding-top:40px;padding-left:88%;">
+            <button type="button" class="btn ink-reaction btn-floating-action btn-lg btn-info" ng-click="Adicionar()">
+                <i class="md md-save"></i>
+            </button>
+        </div>
+        <div class="nano has-scrollbar" style="height: 378px;">
+            <div class="nano-content" tabindex="0">
+                <div class="offcanvas-body">
+                    <form class="form">
+                        <div id="formclie" class="card card-underline" ng-show="divCliente">
+                            <div class="card-head style-gray-light">
+                                <header style="padding-top:21px;">
+                                    <i class="md md-create"></i>
+                                    {{Action}} Cliente
+                                </header>
+                            </div>
+                            <div class="card-body floating-label">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" id="cp" ng-model="Cpf" />
+                                            <label for="cp">
+                                                CPF
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" ng-model="Nome" class="form-control" id="nom" />
+                                    <label for="nom">
+                                        Nome
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" ng-model="Desconto" class="form-control" id="desconto" />
+                                    <label for="desconto">
+                                        Desconto
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body floating-label">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" id="cep" ng-model="Cep" />
+                                            <label for="cep">
+                                                CEP
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" ng-model="Rua" class="form-control" id="rua" />
+                                    <label for="rua">
+                                        Logradouro
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Numero" class="form-control" id="num" />
+                                            <label for="num">
+                                                Número
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Bairro" class="form-control" id="bai" />
+                                            <label for="bai">
+                                                Bairro
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Cidade" class="form-control" id="cid" />
+                                            <label for="cid">
+                                                Cidade
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Uf" class="form-control" id="estado" />
+                                            <label for="estado">
+                                                UF
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" ng-model="Referencia" class="form-control" id="refer" />
+                                    <label for="refer">
+                                        Referência
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="nano-pane">
+                <div class="nano-slider">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

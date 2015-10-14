@@ -1,0 +1,92 @@
+﻿<div ng-controller="PedidoController">
+    <div class="section-body">
+        <div class="col-lg-offset-1 col-md-8">
+            <div class="row">
+                <div class="btn-group pull-right" style="z-index:5;position:absolute;padding-top:27px;padding-left:94%">
+                    <a class="btn ink-reaction btn-floating-action btn-lg btn-info" href="@Url.Action("Adicionar","Pedido")">
+                        <i class="md md-insert-drive-file"></i>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-head style-gray-light">
+                        <header style="padding-top:21px;">
+                            <i class="md md-shopping-cart"></i>
+                            Lista de Pedidos
+                        </header>
+                    </div>
+                    <div class="card-body">
+                        <table id="dataPedido" class="table order-column hover dataTable no-footer">
+                            <thead>
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Nome Cliente</th>
+                                    <th>Quantidade itens</th>
+                                    <th>Valor total</th>
+                                    <th class="details-control"></th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="pedido in pedidos">
+                                <tr onmouseover="init_table_list(this)" class="grid-toggle">
+                                    <td>{{pedido.Numero}}</td>
+                                    <td>{{pedido.Nome}}</td>
+                                    <td>{{pedido.QuantidadeTotal}}</td>
+                                    <td>{{pedido.ValorTotal}}</td>
+                                    <td>
+                                        <button type="button" ng-click="Atualizar(pedido)" id="atualizaPed" href="#offcanvasadd" data-toggle="offcanvas" class="btn ink-reaction btn-floating-action btn-xs btn-primary-light">
+                                            <i class="md md-create"></i>
+                                        </button>
+                                        <button type="button" ng-click="Apagar(pedido)" class="btn ink-reaction btn-floating-action btn-xs btn-danger">
+                                            <i class="md md-delete"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="grid-detail">
+                                    <td colspan="5">
+                                        <div class="card">
+                                           
+                                                <div class="form-group">
+                                                    <label for="data" class="col-sm-2 control-label">Data do Pedido</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="form-control" id="data">{{pedido.DataPedido}}</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="quantidade" class="col-sm-2 control-label">Qtde de itens</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="form-control" id="quantidade">{{pedido.Produtos.length}}</label>
+                                                    </div>
+                                                </div>
+
+                                           
+                                            <div class="card-body" style="padding-bottom:0;">
+                                                <table class="table hover no-footer">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Código de Barras</th>
+                                                            <th>Descricao</th>
+                                                            <th>Quantidade</th>
+                                                            <th>Valor</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody ng-repeat="produto in pedido.Produtos">
+                                                        <tr>
+                                                            <td>{{produto.CodigoBarras}}</td>
+                                                            <td>{{produto.Descricao}}</td>
+                                                            <td>{{produto.Quantidade}}</td>
+                                                            <td>{{produto.Valor}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

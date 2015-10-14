@@ -8020,3 +8020,9 @@ li.L8 {
 .grid-toggle, .grid-detail-show{
     cursor: pointer;
 }
+.btn-inter-div{
+    z-index:5;
+    position:absolute;
+    padding-top:27px;
+    padding-left:94%
+}

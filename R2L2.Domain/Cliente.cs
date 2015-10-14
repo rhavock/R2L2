@@ -41,5 +41,10 @@ namespace R2L2.Domain
         {
             return irepositorio.Listar(this);
         }
+
+        public List<Cliente> Listar(Expression<Func<Cliente, bool>> query, IRepositorio<Cliente> irepositorio)
+        {
+            return irepositorio.Listar(this,query);
+        }
     }
 }
