@@ -35,6 +35,11 @@
             e.preventDefault();
             o._handleOffcanvasOpen($(e.currentTarget));
         });
+        $('#pipoca').on('ondrag', function (e) {
+            console.log(e);
+            e.preventDefault();
+            o._handleOffcanvasOpen($(e.currentTarget));
+        });
         $('[data-dismiss="offcanvas"]').on('click', function (e) {
             o._handleOffcanvasClose();
         });
@@ -168,7 +173,7 @@
     };
     p._enableEvents = function () {
         var o = this;
-        $('.navbar-search .btn').on('click', function (e) {
+        $('.navbar-search .btn').on('mouseover', function (e) {
             o._handleButtonClick(e);
         });
         $('.navbar-search input').on('blur', function (e) {
@@ -196,7 +201,7 @@
         form.removeClass('expanded');
         clearTimeout(this._clearSearchTimer);
         this._clearSearchTimer = setTimeout(function () {
-            input.val('');
+            //input.val('');
         }, 300);
     };
     window.materialadmin.AppNavSearch = new AppNavSearch;

@@ -9,14 +9,14 @@
             <div class="col-lg-offset-1 col-md-8">
                 <div class="row">
                     <div class="btn-group pull-right btn-inter-div">
-                            <a class="btn ink-reaction btn-floating-action btn-lg btn-info" href="#offcanvasadd" data-toggle="offcanvas" ng-click="Adicionar(pedido)">
+                            <a class="btn ink-reaction btn-floating-action btn-lg btn-info" id="pedidoOk" href="#offcanvasadd" data-toggle="offcanvas" ng-click="Adicionar(pedido)" disabled>
                                 <i class="md md-check"></i>
                             </a>
                         </div>
                     <div class="card">
                         <div class="card-head style-gray-light">
                             <div class="tools pull-left" style="vertical-align:sub;">
-                                <form class="navbar-search" style="z-index:6;">
+                                <form id="Cliente" class="navbar-search" style="z-index:6;">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="clienteSearch" placeholder="Escolha o Cliente" />
                                     </div>
@@ -24,16 +24,23 @@
                                         <i class="md md-person"></i>
                                     </button>
                                 </form>
+                                <form id="Produto" class="navbar-search" style="z-index:6;display:none">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="produtoSearch" placeholder="Escolha o Produto" />
+                                    </div>
+                                    <button type="button" class="btn btn-icon-toggle ink-reaction" ng-click="PesquisarProduto()">
+                                        <i class="md md-local-offer"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                         <div class="card-body no-padding">
-                            <div class="list-results">
-                                <div class="col-xs-12 col-lg-6 hbox-xs ink-reaction" ng-repeat="cliente in clientes">
-
+                            <div class="list-results" id="clienteLista">
+                                <div class="col-xs-12 col-lg-6 hbox-xs" ng-repeat="cliente in clientes"  id="pipoca" draggable="true" ondragstart="drag(event)" data-toggle="offcanvas"  href="#offcanvasadd">
                                     <div class="hbox-column v-top">
                                         <div class="clearfix">
-                                            <div class="col-lg-12 margin-bottom-lg">
-                                                <a class="text-lg text-medium" href="#">{{cliente.Nome}}</a>
+                                            <div class="col-lg-12 margin-bottom-lg ink-reaction">
+                                                <label class="text-lg text-medium">{{cliente.Nome}}</label>
                                             </div>
                                         </div>
                                         <div class="clearfix opacity-75">
@@ -42,6 +49,60 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="list-results" id="produtoLista" style="display:none;">
+                                <div class="col-xs-12 col-lg-6 hbox-xs" ng-repeat="produto in produtos" id="pipoca" draggable="true" ondragstart="drag(event)" data-toggle="offcanvas" href="#offcanvasadd">
+                                    <div class="hbox-column v-top">
+                                        <div class="clearfix">
+                                            <div class="col-lg-12 margin-bottom-lg ink-reaction">
+                                                <label class="text-lg text-medium">{{produto.Descricao}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix opacity-75">
+                                            <label class="text-lg text-medium">{{produto.Valor}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas">
+            <div id="offcanvasadd" class="offcanvas-pane style-default-light width-12" style="width: 400px;">
+                <div class="offcanvas-head">
+                    <div class="offcanvas-tools">
+                        <a class="btn btn-icon-toggle pull-right" data-dismiss="offcanvas">
+                            <i class="md md-close"></i>
+                        </a>
+                    </div>
+                </div>
+                <br />
+                <div class="btn-group pull-right" style="z-index:5;position:absolute;padding-top:40px;padding-left:75%;">
+                    <button type="button" class="btn ink-reaction btn-floating-action btn-lg btn-info" ng-click="Adicionar()">
+                        <i class="md md-save"></i>
+                    </button>
+                </div>
+                <div class="nano has-scrollbar" style="height: 378px;">
+                    <div class="nano-content" tabindex="0">
+                        <div class="offcanvas-body">
+                            <form class="form">
+                                <div id="formprod" class="card card-underline">
+                                    <div class="card-head style-gray-light">
+                                        <header style="padding-top:21px;">
+                                            <i class="md md-create"></i>
+                                        </header>
+                                    </div>
+                                    <div id="p" class="card-body floating-label" >
+                                     <div ondrop="drop(event)" ondragover="allowDrop(event)" style="width:250px;height:70px;padding:10px;border:1px solid #aaaaaa;"></div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="nano-pane">
+                        <div class="nano-slider">
                         </div>
                     </div>
                 </div>

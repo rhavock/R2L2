@@ -59,5 +59,10 @@ namespace R2L2.Domain
         {
             return iprodutorepositorio.Listar(this);
         }
+
+        public List<Produto> Listar(Expression<Func<Produto, bool>> query, IRepositorio<Produto> irepositorio)
+        {
+            return irepositorio.Listar(this, query);
+        }
     }
 }
