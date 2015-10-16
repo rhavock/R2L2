@@ -21,6 +21,7 @@
     }
 
     $scope.PesquisarProduto = function () {
+        console.log($('#produtoSearch').val());
         var getData = PedidoService.PesquisarProduto($('#produtoSearch').val());
         getData.then(function (prod) {
             $scope.produtos = prod.data;

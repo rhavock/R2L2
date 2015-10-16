@@ -35,7 +35,7 @@
             e.preventDefault();
             o._handleOffcanvasOpen($(e.currentTarget));
         });
-        $('#pipoca').on('ondrag', function (e) {
+        $('#dragProd').on('ondrag', function (e) {
             console.log(e);
             e.preventDefault();
             o._handleOffcanvasOpen($(e.currentTarget));
