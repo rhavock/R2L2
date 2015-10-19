@@ -1,0 +1,54 @@
+﻿<div ng-controller="UsuarioController">
+    <div class="section-body">
+        <div class="col-md-12">
+            <div class="btn-group pull-left btn-inter-div">
+                <a class="btn ink-reaction btn-floating-action btn-lg btn-info">
+                    <i class="md md-insert-drive-file"></i>
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-head style-gray-light">
+                    <header><i class="md md-account-circle"></i>
+                        Usuários
+                    </header>
+                </div>
+                <div class="card-body">
+                    <div class="list-results" ng-repeat="usuario in usuarios">
+                        <div class="col-xs-12 col-lg-6 hbox-xs">
+                            <div class="hbox-column width-2">
+                                <img class="img-circle img-responsive pull-left" src="{{usuario.imagem}}" />
+                            </div>
+                            <div class="hbox-column v-top">
+                                <div class="clearfix">
+                                    <div class="col-lg-12 margin-bottom-lg">
+                                        <label class="text-lg text-medium">{{usuario.Nome}}</label>
+                                    </div>
+                                </div>
+                                <div class="clearfix opacity-75">
+                                    <div class="col-md-5">
+                                        <span class="glyphicon glyphicon-phone text-sm"></span>
+                                        {{usuario.Telefone}}
+                                    </div>
+                                    <div class="col-md-7">
+                                        <span class="glyphicon glyphicon-envelope text-sm">
+                                        </span>
+                                        {{usuario.Email}}
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <div class="col-lg-12">
+                                        <span class="opacity-75">
+                                            <span class="glyphicon glyphicon-map-marker text-sm">
+                                            </span>
+                                            {{usuario.login}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

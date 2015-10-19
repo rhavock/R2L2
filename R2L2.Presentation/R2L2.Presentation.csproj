@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Models\PedidoModel.cs" />
     <Compile Include="Models\ClienteModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +252,8 @@
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Pedido\Index.cshtml" />
     <Content Include="Views\Pedido\Adicionar.cshtml" />
+    <Content Include="Views\Home\VendaRapida.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\R2L2.Domain\R2L2.Domain.csproj">

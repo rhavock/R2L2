@@ -12,5 +12,10 @@ namespace R2L2.Presentation.Controllers
         {
             return View();
         }
+
+        public ActionResult VendaRapida()
+        {
+            return View();
+        }
     }
 }
