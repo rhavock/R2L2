@@ -35,5 +35,29 @@ namespace R2L2.Presentation.Models
                 };
             }
         }
+
+        public Usuario CriarDominio()
+        {
+            return new Usuario
+            {
+                Email = Email,
+                Imagem = Imagem,
+                Login = Login,
+                Nome = Nome,
+                Senha = Senha,
+                Telefone = Telefone
+            };
+        }
+
+        public UsuarioModel CriarModel(Usuario usuario)
+        {
+            this.Imagem = usuario.Imagem;
+            this.Login = usuario.Login;
+            this.Nome = usuario.Nome;
+            this.Senha = usuario.Senha;
+            this.Telefone = usuario.Telefone;
+            this.Email = usuario.Email;
+            return this;
+        }
     }
 }

@@ -200,6 +200,7 @@
     <Content Include="Scripts\Controllers\ClienteController.js" />
     <Content Include="Scripts\Controllers\PedidoController.js" />
     <Content Include="Scripts\Controllers\ProdutoController.js" />
+    <Content Include="Scripts\Controllers\UsuarioController.js" />
     <Content Include="Scripts\Factories\AuthHttpResponseInterceptor.js" />
     <Content Include="Scripts\Angular\angular-route.min.js" />
     <Content Include="Scripts\Angular\angular.min.js" />
@@ -220,6 +221,7 @@
     <Content Include="Scripts\Services\ClienteService.js" />
     <Content Include="Scripts\Services\PedidoService.js" />
     <Content Include="Scripts\Services\ProdutoService.js" />
+    <Content Include="Scripts\Services\UsuarioService.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Cliente\Adicionar.cshtml" />
     <Content Include="Views\Produto\Adicionar.cshtml" />
@@ -254,6 +256,7 @@
     <Content Include="Views\Pedido\Adicionar.cshtml" />
     <Content Include="Views\Home\VendaRapida.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Adicionar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\R2L2.Domain\R2L2.Domain.csproj">

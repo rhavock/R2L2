@@ -29,7 +29,7 @@ namespace R2L2.Domain
             irepositorio.Atualizar(this, x => x.Login == Login);
         }
 
-        private Usuario Obter<TipoDado>(Expression<Func<Usuario, TipoDado>> expressao, TipoDado valor, IRepositorio<Usuario> irepositorio)
+        public Usuario Obter<TipoDado>(Expression<Func<Usuario, TipoDado>> expressao, TipoDado valor, IRepositorio<Usuario> irepositorio)
         {
             return irepositorio.Obter(this, expressao, valor);
         }

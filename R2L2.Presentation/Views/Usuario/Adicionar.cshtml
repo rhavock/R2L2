@@ -1,0 +1,91 @@
+﻿<div class="offcanvas">
+    <div id="offcanvasadd" class="offcanvas-pane style-default-light width-12" style="width:800px;">
+        <div class="offcanvas-head">
+            <div class="offcanvas-tools">
+                <a class="btn btn-icon-toggle pull-right" data-dissmiss="offcanvas">
+                    <i class="md md-close"></i>
+                </a>
+            </div>
+        </div>
+        <br />
+        <div class="btn-group pull-right" style="z-index:5;position:absolute;padding-top:40px;padding-left:88%;">
+            <button type="button" class="btn ink-reaction btn-floating-action btn-lg btn-info" ng-click="Adicionar()">
+                <i class="md md-save"></i>
+            </button>
+        </div>
+        <div class="nano has-scrollbar">
+            <div class="nano-content" tabindex="0">
+                <div class="offcanvas-body">
+                    <form class="form">
+                        <div id="formUser" class="card">
+                            <div class="card-head style-gray-light">
+                                <header style="padding-top:21px">
+                                    <i class="md md-create"></i>
+                                    {{Action}} Usuário
+                                </header>
+                            </div>
+                            <div class="card-body floating-label">
+                                <div class="form-group">
+                                    <input type="text" ng-model="Nome" class="form-control" id="nomuser" />
+                                    <label for="nomuser">
+                                        Nome
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="tel" class="form-control" id="teluser" ng-model="Telefone" />
+                                            <label for="teluser">
+                                                Telefone
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="emailuser" ng-model="Email" />
+                                            <label for="emailuser">
+                                                E-mail
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="loginuser" ng-model="Login" />
+                                            <label for="loginuser">
+                                                Login
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="passuser" ng-model="Senha" />
+                                            <label for="passuser">
+                                                Senha
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="confirmuser" />
+                                            <label for="confirmuser">
+                                                Confirmação de senha
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="nano-pane">
+                <div class="nano-slider"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
     <div class="section-body">
         <div class="col-md-12">
             <div class="btn-group pull-left btn-inter-div">
-                <a class="btn ink-reaction btn-floating-action btn-lg btn-info">
+                <a class="btn ink-reaction btn-floating-action btn-lg btn-info" href="#offcanvasadd" data-toggle="offcanvas" ng-click="AddUsuario()">
                     <i class="md md-insert-drive-file"></i>
                 </a>
             </div>
@@ -16,7 +16,7 @@
                     <div class="list-results" ng-repeat="usuario in usuarios">
                         <div class="col-xs-12 col-lg-6 hbox-xs">
                             <div class="hbox-column width-2">
-                                <img class="img-circle img-responsive pull-left" src="{{usuario.imagem}}" />
+                                <img class="img-circle img-responsive pull-left" src="~/Content/Images/512.png" />
                             </div>
                             <div class="hbox-column v-top">
                                 <div class="clearfix">
@@ -38,9 +38,9 @@
                                 <div class="clearfix">
                                     <div class="col-lg-12">
                                         <span class="opacity-75">
-                                            <span class="glyphicon glyphicon-map-marker text-sm">
+                                            <span class="md md-account-circle text-sm">
                                             </span>
-                                            {{usuario.login}}
+                                            {{usuario.Login}}
                                         </span>
                                     </div>
                                 </div>
@@ -51,4 +51,5 @@
             </div>
         </div>
     </div>
+    @Html.Partial("Adicionar")
 </div>
