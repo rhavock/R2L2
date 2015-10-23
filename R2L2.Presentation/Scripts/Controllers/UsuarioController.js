@@ -1,5 +1,13 @@
 ﻿var UsuarioController = function ($scope, UsuarioService) {
     Listar();
+    var url = window.URL || window.WebkitURL;
+    Dropzone.options.perfil = {
+        init: function(){
+            this.on("complete", function (data) {
+                this.disable();
+            })
+        }
+    } 
 
     function Listar() {
         var getData = UsuarioService.Listar();
@@ -72,7 +80,8 @@
         $('.offcanvas-pane').css({ '-webkit-transform': '', '-ms-transform': '', '-o-transform': '', 'transform': '' });
         $('#base > .backdrop').fadeOut(function () {
             $(this).remove();
-        });
+        });   
     }
+    
 }
 UsuarioController.$inject = ['$scope', 'UsuarioService'];

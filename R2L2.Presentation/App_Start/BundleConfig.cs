@@ -16,7 +16,8 @@ namespace R2L2.Presentation
                       "~/Content/toastr.css",
                       "~/Content/dataTables.colVis.css",
                       "~/Content/dataTables.tableTools.css",
-                      "~/Content/jquery.dataTables.css"));
+                      "~/Content/jquery.dataTables.css",
+                      "~/Content/dropzone-theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/R2L2Presentation")
                 .IncludeDirectory("~/Scripts/Controllers","*.js")
